@@ -21,6 +21,7 @@ def sendEmail():
 
     for rec_email in rec_emails:
         server.sendmail(sender_email, rec_email, message)
+    server.quit()
 
 sheetUrl = "https://app.smartsheet.com/b/publish?EQBCT=1fb10103a37c4383b3e11b5e50c5a50d"
 options = Options()
