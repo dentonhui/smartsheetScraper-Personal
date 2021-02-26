@@ -15,13 +15,12 @@ def sendEmail():
     password = "password"
     message = f"The after-hours lab sign-up sheet has updated."
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(sender_email, password)
-
     for rec_email in rec_emails:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email, password)
         server.sendmail(sender_email, rec_email, message)
-    server.quit()
+        server.quit()
 
 sheetUrl = "https://app.smartsheet.com/b/publish?EQBCT=1fb10103a37c4383b3e11b5e50c5a50d"
 options = Options()
